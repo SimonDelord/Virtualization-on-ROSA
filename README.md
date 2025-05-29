@@ -54,13 +54,15 @@ Just click on the create button.
 ![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-1.png)
 
 
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-2.png)
+
+
 Once the ODF operator is deployed, you can now create a "Storage System" (either via the Storage -> ODF view on the console or via the Deployed-Operators -> ODF).
 As part of the various screens select:
  - ceph-rbd as the new default storage class
  - select the gp3-csi and the 3 m5.4x instances
  - select the default for everything else
 
-![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-2.png)
 
 ![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-3.png)
 
