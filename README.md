@@ -86,8 +86,15 @@ Once you go and check on the StorageClasses, there will 2 defaults. Remove the g
 Once ODF has been deployed, you can then configure the OCP-virt operator.
 Select in Operator-hub the OpenShift virtualiszation and do the standard deployment.
 
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-virt-1.png)
 
-You then need to create a ClusterSomething CR by using the defaults.
+
+You then need to create a HyperConverged CR by using the defaults.
+
+You should then have a "virtualization tab" appearing on the OpenShift console tab on the left.
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/ocp-virt-virt-2.png)
+
 
 ## Deploy the VMs.
 
