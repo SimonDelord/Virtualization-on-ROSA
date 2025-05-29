@@ -71,6 +71,16 @@ As part of the various screens select:
 ![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-5.png)
 
 
+Once you go and check on the StorageClasses, there will 2 defaults. Remove the gp3-csi by changing the label to false
+
+```
+ annotations:
+    storageclass.kubernetes.io/is-default-class: 'false'
+```
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-6.png)
+
+
 
 ## Deploy OCP-virt
 Once ODF has been deployed, you can then configure the OCP-virt operator.
