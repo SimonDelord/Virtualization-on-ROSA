@@ -98,9 +98,15 @@ You should then have a "virtualization tab" appearing on the OpenShift console t
 
 ## Deploy the VMs.
 
-Once OCP-virt is up and running.
+Once OCP-virt is up and running. You go to the Virtualization tab, create VMs from Templates and select the defaults (you can change the name and cpu/mem).
 
 You can start deploying VMs.
+it shoudl come up and you can play with the live migration feature or any other console aspects.
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-linux-1.png)
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-linux-2.png)
+
 
 ### Linux VM
 For the linux one just go to Template, select fedora, select quick deploy and the VM should deploy without any "warning". You should be able to demo live-migration straight away.
