@@ -28,3 +28,43 @@ Assuming this is done, you would typically do
 rosa create machinepool -c cluster-name --name odf-pool --type 
 rosa create machinepool -c cluster-name --name odf-pool --type 
 ```
+
+
+## Setup ODF
+once the previous step is finished.
+On the Operator-hub console, look for ODF operator. Select it.
+You need an arn to deploy since it's a ROSA cluster, I typically use my "own credentials".
+
+```
+arn:aws:iam::614894697993:user/sdelord@redhat.com-XXXXXXXX
+```
+You cut and paste those credentials into the ODF operator setup.
+Just click on the create button.
+
+
+Once the ODF operator is deployed, you can now create a "Storage System" (either via the Storage -> ODF view on the console or via the Deployed-Operators -> ODF).
+As part of the various screens select:
+ - ceph-rbd as the new default storage class
+ - select the gp3-csi and the 3 m5.4x instances
+
+## Deploy OCP-virt
+Once ODF has been deployed, you can then configure the OCP-virt operator.
+Select in Operator-hub the OpenShift virtualiszation and do the standard deployment.
+
+You then need to create a ClusterSomething CR by using the defaults.
+
+## Deploy the VMs.
+
+Once OCP-virt is up and running.
+
+You can start deploying VMs.
+
+### Linux VM
+For the linux one just go to Template, select fedora, select quick deploy and the VM should deploy without any "warning". You should be able to demo live-migration straight away.
+
+
+### Windows VM
+The windows one is a bit more tricky.
+Go and select the 
+
+
