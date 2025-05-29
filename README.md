@@ -33,6 +33,10 @@ rosa create machinepool -c rosa-556nh --name=vm-nodes --replicas=2 --instance-ty
 rosa create machinepool -c rosa-556nh --name=odf-nodes --replicas=3 --instance-type=m5.4xlarge
 
 rosa list machinepools --cluster rosa-556nh
+
+ID         AUTOSCALING  REPLICAS  INSTANCE TYPE  LABELS    TAINTS    AVAILABILITY ZONE  SUBNET                    DISK SIZE  VERSION  AUTOREPAIR
+odf-nodes  No           3/3       m5.4xlarge                         us-east-2a         subnet-01b781d7fdf9230ab  300 GiB    4.17.30  Yes
+vm-nodes   No           2/2       m5.metal                           us-east-2a         subnet-01b781d7fdf9230ab  300 GiB    4.17.30  Yes
 ```
 
 
