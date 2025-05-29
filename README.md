@@ -74,3 +74,9 @@ The windows one is a bit more tricky.
 Go and select the 
 
 
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/ocp-virt-windows-vm-1.png)
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/ocp-virt-windows-vm-2.png)
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/ocp-virt-windows-3.png)
+
