@@ -25,8 +25,14 @@ You need to have the rosa-cli installed.
 Assuming this is done, you would typically do
 
 ```
-rosa create machinepool -c cluster-name --name odf-pool --type 
-rosa create machinepool -c cluster-name --name odf-pool --type 
+[rosa@bastion ~]$ rosa list clusters
+ID                                NAME        STATE  TOPOLOGY
+2j1ub9cdloflimkfjm00jpq21b27v4ij  rosa-5qppb  ready  Hosted CP
+
+rosa create machinepool -c rosa-556nh --name=vm-nodes --replicas=2 --instance-type=m5.metal
+rosa create machinepool -c rosa-556nh --name=odf-nodes --replicas=3 --instance-type=m5.4xlarge
+
+rosa list machinepools --cluster rosa-556nh
 ```
 
 
