@@ -51,15 +51,29 @@ arn:aws:iam::614894697993:user/sdelord@redhat.com-XXXXXXXX
 You cut and paste those credentials into the ODF operator setup.
 Just click on the create button.
 
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-1.png)
+
 
 Once the ODF operator is deployed, you can now create a "Storage System" (either via the Storage -> ODF view on the console or via the Deployed-Operators -> ODF).
 As part of the various screens select:
  - ceph-rbd as the new default storage class
  - select the gp3-csi and the 3 m5.4x instances
+ - select the default for everything else
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-2.png)
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-3.png)
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-4.png)
+
+![Browser](https://github.com/SimonDelord/Virtualization-on-ROSA/blob/main/images/rosa-virt-odf-5.png)
+
+
 
 ## Deploy OCP-virt
 Once ODF has been deployed, you can then configure the OCP-virt operator.
 Select in Operator-hub the OpenShift virtualiszation and do the standard deployment.
+
 
 You then need to create a ClusterSomething CR by using the defaults.
 
