@@ -22,8 +22,6 @@ spec:
       metadata:
         creationTimestamp: null
         name: 'fedora-simon-demo'
-        persistentVolumeClaim:
-        claimName: fedora-simon-demo-pvc
       spec:
         sourceRef:
           kind: 'DataSource'
@@ -84,6 +82,8 @@ spec:
       volumes:
         - dataVolume:
             name: 'fedora-simon-demo'
+            persistentVolumeClaim:
+              claimName: fedora-simon-demo-pvc
           name: 'rootdisk'
         - cloudInitNoCloud:
             userData: "#cloud-config\nuser: fedora\npassword: lclk-iwiw-jobg\nchpasswd: { expire: False }"
