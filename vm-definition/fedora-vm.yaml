@@ -23,10 +23,13 @@ spec:
         creationTimestamp: null
         name: 'fedora-simon-demo'
       spec:
-        sourceRef:
-          kind: 'DataSource'
-          name: 'fedora'
-          namespace: 'openshift-virtualization-os-images'
+###        sourceRef:
+###          kind: 'DataSource'
+###          name: 'fedora'
+###          namespace: 'openshift-virtualization-os-images'
+        source:
+          http:
+            url: http://cdi-http-import-server.kubevirt/images/alpine.iso
         storage:
           storageClassName: ocs-storagecluster-ceph-rbd
           resources:
