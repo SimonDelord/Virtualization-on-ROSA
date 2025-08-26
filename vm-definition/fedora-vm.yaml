@@ -27,9 +27,12 @@ spec:
 ###          kind: 'DataSource'
 ###          name: 'fedora'
 ###          namespace: 'openshift-virtualization-os-images'
+ #       source:
+ #         http:
+ #           url: http://cdi-http-import-server.kubevirt/images/alpine.iso
         source:
-          http:
-            url: http://cdi-http-import-server.kubevirt/images/alpine.iso
+          containerDisk:
+            image: kubevirt/fedora-cloud-container-disk-demo:latest
         storage:
           storageClassName: ocs-storagecluster-ceph-rbd
           resources:
