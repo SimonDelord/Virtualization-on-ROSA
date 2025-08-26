@@ -22,6 +22,8 @@ spec:
       metadata:
         creationTimestamp: null
         name: 'fedora-simon-demo'
+        persistentVolumeClaim:
+        claimName: fedora-simon-demo-pvc
       spec:
         sourceRef:
           kind: 'DataSource'
