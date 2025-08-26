@@ -32,7 +32,7 @@ spec:
  #           url: http://cdi-http-import-server.kubevirt/images/alpine.iso
         source:
           registry: 
-            url: kubevirt/fedora-cloud-container-disk-demo:latest
+            url: https://kubevirt/fedora-cloud-container-disk-demo:latest
         storage:
           storageClassName: ocs-storagecluster-ceph-rbd
           resources:
