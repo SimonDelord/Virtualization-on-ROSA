@@ -29,7 +29,7 @@ spec:
       name: alpine-dv
     spec:
       storage:
-      storageClassName: ocs-storagecluster-ceph-rbd
+        storageClassName: ocs-storagecluster-ceph-rbd
         resources:
           requests:
             storage: 2Gi
