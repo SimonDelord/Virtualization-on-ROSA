@@ -1,0 +1,88 @@
+apiVersion: 'kubevirt.io/v1'
+kind: 'VirtualMachine'
+metadata:
+  annotations:
+    kubemacpool.io/transaction-timestamp: '2025-08-26T06:03:01.724813446Z'
+    vm.kubevirt.io/validations: "[\n  {\n    \"name\": \"minimal-required-memory\",\n    \"path\": \"jsonpath::.spec.domain.memory.guest\",\n    \"rule\": \"integer\",\n    \"message\": \"This VM requires more memory.\",\n    \"min\": 2147483648\n  }\n]\n"
+  creationTimestamp: '2025-08-26T06:03:01Z'
+  generation: 1
+  labels:
+    app: 'fedora-simon-demo'
+    kubevirt.io/dynamic-credentials-support: 'true'
+    vm.kubevirt.io/template: 'fedora-server-small'
+    vm.kubevirt.io/template.namespace: 'openshift'
+    vm.kubevirt.io/template.revision: '1'
+    vm.kubevirt.io/template.version: 'v0.32.2'
+  name: 'fedora-simon-demo'
+  namespace: 'vm-demo'
+spec:
+  dataVolumeTemplates:
+    - apiVersion: 'cdi.kubevirt.io/v1beta1'
+      kind: 'DataVolume'
+      metadata:
+        creationTimestamp: null
+        name: 'fedora-simon-demo'
+      spec:
+        sourceRef:
+          kind: 'DataSource'
+          name: 'fedora'
+          namespace: 'openshift-virtualization-os-images'
+        storage:
+          resources:
+            requests:
+              storage: '30Gi'
+  runStrategy: 'Halted'
+  template:
+    metadata:
+      annotations:
+        vm.kubevirt.io/flavor: 'small'
+        vm.kubevirt.io/os: 'fedora'
+        vm.kubevirt.io/workload: 'server'
+      creationTimestamp: null
+      labels:
+        kubevirt.io/domain: 'fedora-simon-demo'
+        kubevirt.io/size: 'small'
+    spec:
+      architecture: 'amd64'
+      domain:
+        cpu:
+          cores: 1
+          sockets: 4
+          threads: 1
+        devices:
+          disks:
+            - disk:
+                bus: 'virtio'
+              name: 'rootdisk'
+            - disk:
+                bus: 'virtio'
+              name: 'cloudinitdisk'
+          interfaces:
+            - macAddress: '02:90:56:00:00:00'
+              masquerade: {}
+              model: 'virtio'
+              name: 'default'
+          rng: {}
+        features:
+          acpi: {}
+          smm:
+            enabled: true
+        firmware:
+          bootloader:
+            efi: {}
+        machine:
+          type: 'pc-q35-rhel9.4.0'
+        memory:
+          guest: '8Gi'
+        resources: {}
+      networks:
+        - name: 'default'
+          pod: {}
+      terminationGracePeriodSeconds: 180
+      volumes:
+        - dataVolume:
+            name: 'fedora-simon-demo'
+          name: 'rootdisk'
+        - cloudInitNoCloud:
+            userData: "#cloud-config\nuser: fedora\npassword: lclk-iwiw-jobg\nchpasswd: { expire: False }"
+          name: 'cloudinitdisk'
